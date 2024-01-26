@@ -35,4 +35,17 @@ public class PlayerController : MonoBehaviour
 
         transform.position += _moveDirection * Time.deltaTime * speed;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other);
+
+        if (other.GetComponent<MoveTo>())
+            Debug.Log("Game over");
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision);
+    }
 }
