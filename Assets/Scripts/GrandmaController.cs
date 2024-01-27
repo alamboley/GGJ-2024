@@ -72,9 +72,24 @@ public class GrandmaController : MonoBehaviour
         }
     }
 
+    public void SetFollowPlayer()
+    {
+        _agent.destination = player.transform.position;
+    }
+
     public void UnfollowPlayer()
     {
         Debug.Log("Unfollow player");
         //_GetRandomGoal();
+    }
+
+    public void StartSlowZone()
+    {
+        _agent.speed *= 0.5f;
+    }
+
+    public void EndSlowZone()
+    {
+        _agent.speed *= 2f;
     }
 }

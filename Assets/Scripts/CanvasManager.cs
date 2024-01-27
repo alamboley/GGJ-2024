@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CanvasManager : MonoBehaviour
 {
     public PlayerController playerController;
+    public GrandmaController grandmaController;
 
     public TextMeshProUGUI bones;
     public int numBonesRequiredForBigEyes = 1;
@@ -14,12 +15,14 @@ public class CanvasManager : MonoBehaviour
     public BoxCollider dogBoxCollider;
     public TextMeshProUGUI pola;
     public Button bigEyes;
+    public Button ForceFollowPlayer;
 
     int _bones = 0;
     int _pola = 0;
     void Start()
     {
         bigEyes.onClick.AddListener(_ActivateBigEyes);
+        ForceFollowPlayer.onClick.AddListener(grandmaController.SetFollowPlayer);
     }
 
     public void FoundBone()
