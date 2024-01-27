@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log(other);
 
-        if (other.GetComponent<MoveTo>())
+        if (other.GetComponent<GrandmaController>())
             Debug.Log("Game over");
 
         if (other.GetComponent<OsComponent>())
