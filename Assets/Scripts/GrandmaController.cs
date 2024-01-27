@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
@@ -7,6 +8,9 @@ public class GrandmaController : MonoBehaviour
     public PlayerController player;
     public Transform[] goals;
     public float delayUpdatePlayerPosition;
+
+    public Transform home;
+    public Transform car;
 
     private NavMeshAgent _agent;
 
@@ -30,6 +34,23 @@ public class GrandmaController : MonoBehaviour
         int randomNumber = random.Next(goals.Length);
 
         _agent.destination = goals[randomNumber].position;
+    }
+
+    public void GetShockedByCatBigEyes(int delay)
+    {
+        _agent.isStopped = true;
+        GoHome();
+
+        DOVirtual.DelayedCall(delay, () => _agent.isStopped = false);
+    }
+
+    public void GoHome()
+    {
+        _agent.destination = home.position;
+    }
+    public void GoCar()
+    {
+        _agent.destination = car.position;
     }
 
     public void FollowPlayer()

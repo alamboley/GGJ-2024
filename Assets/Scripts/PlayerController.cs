@@ -1,12 +1,19 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public CanvasManager canvasManager;
+    public GrandmaController grandmaController;
 
     public float speed = 10f;
     public float rotationSpeed = 5f;
+
+    public int bigEyesTimeLength = 3;
     
     private Vector3 _moveDirection;
+
+    private bool _canMove = true;
 
     void Start()
     {
@@ -15,6 +22,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (!_canMove)
+            return;
+
         _moveDirection = Vector3.zero;
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.W))
         {
@@ -36,6 +46,15 @@ public class PlayerController : MonoBehaviour
         transform.position += _moveDirection * Time.deltaTime * speed;
     }
 
+    public void UseBigEyes()
+    {
+        _canMove = false;
+
+        grandmaController.GetShockedByCatBigEyes(bigEyesTimeLength);
+
+        DOVirtual.DelayedCall(bigEyesTimeLength, () => _canMove = true);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other);
@@ -43,9 +62,16 @@ public class PlayerController : MonoBehaviour
         if (other.GetComponent<GrandmaController>())
             Debug.Log("Game over");
 
-        if (other.GetComponent<OsComponent>())
+        if (other.GetComponent<BoneComponent>())
         {
-            other.GetComponent<OsComponent>().OnCollect();
+            other.GetComponent<BoneComponent>().OnCollect();
+            canvasManager.FoundBone();
+        }
+
+        if (other.GetComponent<PolaComponent>())
+        {
+            other.GetComponent<PolaComponent>().OnCollect();
+            canvasManager.FoundPola();
         }
     }
 
