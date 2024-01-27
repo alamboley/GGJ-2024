@@ -57,14 +57,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
+        //Debug.Log(other.name);
 
         if (other.name == "WinZone")
         {
             Debug.Log("WIIIIN");
             return;
         }
-        if (other.name == "Car")
+        else if (other.name == "Car")
             grandmaController.GoToCar();
         else if (other.GetComponent<GrandmaController>())
             Debug.Log("Game over");
@@ -78,10 +78,5 @@ public class PlayerController : MonoBehaviour
             other.GetComponent<PolaComponent>().OnCollect();
             canvasManager.FoundPola();
         }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log(collision);
     }
 }

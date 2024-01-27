@@ -8,11 +8,14 @@ public class GrandmaController : MonoBehaviour
     public PlayerController player;
     public Transform[] goals;
     public float delayUpdatePlayerPosition;
+    public int maxLastTimeSeen;
 
     public Transform home;
     public Transform car;
 
     private NavMeshAgent _agent;
+    private bool _isFollowingPlayer = false;
+    private float _lastTimeSeenPlayer = 0;
 
     void Start()
     {
@@ -25,6 +28,26 @@ public class GrandmaController : MonoBehaviour
         if (_agent.remainingDistance < 0.1)
         {
             _GetRandomGoal();
+        }
+
+        if (!_agent.isStopped)
+        {
+            _DoRaycast(transform.position);
+            _DoRaycast(transform.position + Vector3.left);
+            _DoRaycast(transform.position + Vector3.right);
+        }
+    }
+
+    private void _DoRaycast(Vector3 origin)
+    {
+        if (Physics.Raycast(origin, transform.TransformDirection(Vector3.forward), out RaycastHit hit, 10))
+        {
+            Debug.DrawRay(origin, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+
+            if (hit.collider.name == "Player")
+            {
+                FollowPlayer();
+            }
         }
     }
 
@@ -56,17 +79,29 @@ public class GrandmaController : MonoBehaviour
     public void FollowPlayer()
     {
         Debug.Log("Follow player");
+        _lastTimeSeenPlayer = Time.time;
 
-        StartCoroutine(_FollowPlayer());
+        if (!_isFollowingPlayer)
+        {
+            _isFollowingPlayer = true;
+            StartCoroutine(_FollowPlayer());
+        }
     }
 
     IEnumerator _FollowPlayer()
     {
-        while (true)
+        while (_isFollowingPlayer)
         {
-            Debug.Log("update player position");
-
-            _agent.destination = player.transform.position;
+            if (Time.time - _lastTimeSeenPlayer > maxLastTimeSeen)
+            {
+                Debug.Log("didn't see player since a long time, unfollow");
+                _UnfollowPlayer();
+            }
+            else
+            {
+                Debug.Log("update follow player position");
+                _agent.destination = player.transform.position;
+            }
 
             yield return new WaitForSeconds(delayUpdatePlayerPosition);
         }
@@ -77,10 +112,11 @@ public class GrandmaController : MonoBehaviour
         _agent.destination = player.transform.position;
     }
 
-    public void UnfollowPlayer()
+    private void _UnfollowPlayer()
     {
         Debug.Log("Unfollow player");
-        //_GetRandomGoal();
+        _isFollowingPlayer = false;
+        _GetRandomGoal();
     }
 
     public void StartSlowZone()
