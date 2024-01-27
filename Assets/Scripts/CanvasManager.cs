@@ -9,6 +9,9 @@ public class CanvasManager : MonoBehaviour
 
     public TextMeshProUGUI bones;
     public int numBonesRequiredForBigEyes = 1;
+    public TextMeshProUGUI dogStatut;
+    public int numBonesRequiredForNiceDog = 2;
+    public BoxCollider dogBoxCollider;
     public TextMeshProUGUI pola;
     public Button bigEyes;
 
@@ -26,11 +29,26 @@ public class CanvasManager : MonoBehaviour
         bones.text = "x " + _bones;
 
         _CanUseBigEyes();
+        _CheckDogIsNice();
     }
 
     void _CanUseBigEyes()
     {
         bigEyes.interactable = _bones >= numBonesRequiredForBigEyes;
+    }
+
+    void _CheckDogIsNice()
+    {
+        if (_bones >= numBonesRequiredForNiceDog)
+        {
+            dogStatut.text = "Dog is happy";
+            dogBoxCollider.enabled = false;
+        }
+        else
+        {
+            dogStatut.text = "Dog is not happy";
+            dogBoxCollider.enabled = true;
+        }
     }
 
     void _ActivateBigEyes()
@@ -45,6 +63,7 @@ public class CanvasManager : MonoBehaviour
 
         DOVirtual.Int(numBones, _bones, 0.5f, (int value) => bones.text = "x " + value);
         _CanUseBigEyes();
+        _CheckDogIsNice();
     }
 
     public void FoundPola()

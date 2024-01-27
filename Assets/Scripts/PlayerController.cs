@@ -57,7 +57,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other);
+        if (other.name == "WinZone")
+        {
+            Debug.Log("WIIIIN");
+            return;
+        }
 
         if (other.GetComponent<GrandmaController>())
             Debug.Log("Game over");
