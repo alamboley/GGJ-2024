@@ -4645,37 +4645,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3492dc64711edb64a90236c5925b0ee9, type: 3}
---- !u!1 &493836917
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 493836918}
-  m_Layer: 0
-  m_Name: Clotures
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &493836918
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493836917}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1268355896}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &502308775 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5626261035901318557, guid: 7ec462918b505a54da72b11009c11972,
@@ -7160,7 +7129,7 @@ PrefabInstance:
     - target: {fileID: 751388533829686062, guid: cfaf6d01ea81def478ecd9e4e722b15e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.79
+      value: 17.93
       objectReference: {fileID: 0}
     - target: {fileID: 751388533829686062, guid: cfaf6d01ea81def478ecd9e4e722b15e,
         type: 3}
@@ -11077,7 +11046,6 @@ Transform:
   - {fileID: 73251797}
   - {fileID: 1072763010}
   - {fileID: 505125583}
-  - {fileID: 493836918}
   - {fileID: 711410344}
   - {fileID: 1925535683}
   - {fileID: 1889007157}
