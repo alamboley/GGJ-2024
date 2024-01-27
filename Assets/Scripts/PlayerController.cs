@@ -57,22 +57,23 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.name);
+
         if (other.name == "WinZone")
         {
             Debug.Log("WIIIIN");
             return;
         }
-
-        if (other.GetComponent<GrandmaController>())
+        if (other.name == "Car")
+            grandmaController.GoToCar();
+        else if (other.GetComponent<GrandmaController>())
             Debug.Log("Game over");
-
-        if (other.GetComponent<BoneComponent>())
+        else if (other.GetComponent<BoneComponent>())
         {
             other.GetComponent<BoneComponent>().OnCollect();
             canvasManager.FoundBone();
         }
-
-        if (other.GetComponent<PolaComponent>())
+        else if (other.GetComponent<PolaComponent>())
         {
             other.GetComponent<PolaComponent>().OnCollect();
             canvasManager.FoundPola();

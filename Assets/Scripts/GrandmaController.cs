@@ -48,7 +48,7 @@ public class GrandmaController : MonoBehaviour
     {
         _agent.destination = home.position;
     }
-    public void GoCar()
+    public void GoToCar()
     {
         _agent.destination = car.position;
     }
