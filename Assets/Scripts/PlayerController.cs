@@ -42,6 +42,11 @@ public class PlayerController : MonoBehaviour
 
         if (other.GetComponent<MoveTo>())
             Debug.Log("Game over");
+
+        if (other.GetComponent<OsComponent>())
+        {
+            other.GetComponent<OsComponent>().OnCollect();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
