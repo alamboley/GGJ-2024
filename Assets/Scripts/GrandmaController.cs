@@ -17,6 +17,8 @@ public class GrandmaController : MonoBehaviour
     private bool _isFollowingPlayer = false;
     private float _lastTimeSeenPlayer = 0;
 
+    private bool _mustGoHome = false;
+
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -25,12 +27,13 @@ public class GrandmaController : MonoBehaviour
 
     private void Update()
     {
-        if (_agent.remainingDistance < 0.1)
+        if (_agent.remainingDistance < 0.05)
         {
             _GetRandomGoal();
+            _mustGoHome = false;
         }
 
-        if (!_agent.isStopped)
+        if (!_agent.isStopped || !_mustGoHome)
         {
             _DoRaycast(transform.position);
             _DoRaycast(transform.position + Vector3.left);
@@ -62,6 +65,8 @@ public class GrandmaController : MonoBehaviour
     public void GetShockedByCatBigEyes(int delay)
     {
         _agent.isStopped = true;
+        _mustGoHome = true;
+        _isFollowingPlayer = false;
         GoHome();
 
         DOVirtual.DelayedCall(delay, () => _agent.isStopped = false);

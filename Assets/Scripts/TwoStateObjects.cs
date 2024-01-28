@@ -6,7 +6,10 @@ public class TwoStateObjects : MonoBehaviour
     public Transform secondChild;
     private void OnTriggerEnter(Collider other)
     {
-        secondChild.gameObject.SetActive(true);
-        firstChild.gameObject.SetActive(false);
+        if (other.GetComponent<PlayerController>())
+        {
+            secondChild.gameObject.SetActive(true);
+            firstChild.gameObject.SetActive(false);
+        }
     }
 }
