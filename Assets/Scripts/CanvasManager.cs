@@ -1,4 +1,5 @@
 using DG.Tweening;
+using DG.Tweening.Core.Easing;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +17,8 @@ public class CanvasManager : MonoBehaviour
     public TextMeshProUGUI pola;
     public Button bigEyes;
     public Button ForceFollowPlayer;
+
+    public HorizontalLayoutGroup polasLayoutGroup;
 
     int _bones = 0;
     int _pola = 0;
@@ -71,6 +74,8 @@ public class CanvasManager : MonoBehaviour
 
     public void FoundPola()
     {
+        polasLayoutGroup.transform.GetChild(_pola).gameObject.SetActive(true);
+
         ++_pola;
 
         pola.text = "x " + _pola;
