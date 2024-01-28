@@ -28,6 +28,8 @@ public class CanvasManager : PersistentSingleton<CanvasManager>
 
     public Button catBtn;
 
+    public GameObject instructions;
+    public Button startGame;
     public GameObject win;
     public GameObject loose;
 
@@ -35,6 +37,8 @@ public class CanvasManager : PersistentSingleton<CanvasManager>
     int _pola = 0;
     void Start()
     {
+        startGame.onClick.AddListener(() => instructions.SetActive(false));
+
         catBtn.onClick.AddListener(_ActivateBigEyes);
         ForceFollowPlayer.onClick.AddListener(grandmaController.SetFollowPlayer);
     }
