@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5626261035901318557}
   - component: {fileID: 1608064263234070722}
   m_Layer: 0
-  m_Name: PF_Fauteuil
+  m_Name: PF_Banc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
