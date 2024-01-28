@@ -7,8 +7,8 @@ public class PolaComponent : MonoBehaviour
     {
         float _speed = Random.Range(0.5f, 1f);
 
-        transform.DORotate(Vector3.up * 180, _speed).SetLoops(-1, LoopType.Restart);
-        transform.DOMoveY(1f, _speed).SetLoops(-1, LoopType.Restart);
+        transform.DORotate(Vector3.up * 180, _speed).SetLoops(-1, LoopType.Yoyo);
+        transform.DOMoveY(1f, _speed).SetLoops(-1, LoopType.Yoyo);
     }
 
     public void OnCollect()
