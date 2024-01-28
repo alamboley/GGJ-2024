@@ -128,4 +128,11 @@ public class GrandmaController : MonoBehaviour
     {
         _agent.speed *= 2f;
     }
+
+    public void LineObstacle(int waitTime)
+    {
+        float speed = _agent.speed;
+        _agent.speed = 0;
+        DOVirtual.DelayedCall(waitTime, () => _agent.speed = speed);
+    }
 }
