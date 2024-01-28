@@ -16620,6 +16620,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1677432055}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1536528684 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1406405065035654152, guid: 20af540ffb3de5d47887c3dcef79b7bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6100065127514739673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1543000327 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 751388533829686062, guid: f4bb97ed4226af84db2e76a8db9443cb,
@@ -16699,6 +16705,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5626261035901318557, guid: 073acc5628313a44ea3f535e4bed40de,
     type: 3}
   m_PrefabInstance: {fileID: 167664669}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1561025062 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 5113337890940180550, guid: 20af540ffb3de5d47887c3dcef79b7bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6100065127514739673}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1568907864
 GameObject:
@@ -19081,6 +19093,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1771480501}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1780899782 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4880571453645083286, guid: 20af540ffb3de5d47887c3dcef79b7bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6100065127514739673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1782868922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20464,6 +20482,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5626261035901318557, guid: 840a066c7938cdc4d976850e0550eb75,
     type: 3}
   m_PrefabInstance: {fileID: 1947485815}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1954066255 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4099911812889586767, guid: 20af540ffb3de5d47887c3dcef79b7bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6100065127514739673}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1965260542
 PrefabInstance:
@@ -22473,20 +22497,70 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2643689181590981358, guid: 20af540ffb3de5d47887c3dcef79b7bb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 2643689181590981358, guid: 20af540ffb3de5d47887c3dcef79b7bb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.443
+      objectReference: {fileID: 0}
+    - target: {fileID: 2643689181590981358, guid: 20af540ffb3de5d47887c3dcef79b7bb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.47
+      objectReference: {fileID: 0}
     - target: {fileID: 4880571453645083286, guid: 20af540ffb3de5d47887c3dcef79b7bb,
         type: 3}
       propertyPath: m_Name
       value: Tuyau
       objectReference: {fileID: 0}
+    - target: {fileID: 5113337890940180550, guid: 20af540ffb3de5d47887c3dcef79b7bb,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5113337890940180550, guid: 20af540ffb3de5d47887c3dcef79b7bb,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5113337890940180550, guid: 20af540ffb3de5d47887c3dcef79b7bb,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585025973400543558, guid: 20af540ffb3de5d47887c3dcef79b7bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7343075987472760732, guid: 20af540ffb3de5d47887c3dcef79b7bb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7343075987472760732, guid: 20af540ffb3de5d47887c3dcef79b7bb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f8f10af1c6994c546870b95bf64c5a6b, type: 2}
     - target: {fileID: 8870401737691102804, guid: 20af540ffb3de5d47887c3dcef79b7bb,
         type: 3}
       propertyPath: grandmaController
       value: 
       objectReference: {fileID: 336763957}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2022108550167358465, guid: 20af540ffb3de5d47887c3dcef79b7bb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4880571453645083286, guid: 20af540ffb3de5d47887c3dcef79b7bb,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6100065127514739676}
   m_SourcePrefab: {fileID: 100100000, guid: 20af540ffb3de5d47887c3dcef79b7bb, type: 3}
 --- !u!4 &6100065127514739674 stripped
 Transform:
@@ -22494,6 +22568,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6100065127514739673}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6100065127514739676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780899782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1b225f5ee21764b9e2fbea9d17552d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TuyauOK: {fileID: 1536528684}
+  TuyauNotOK: {fileID: 1954066255}
+  TuyauSlowZone: {fileID: 1561025062}
 --- !u!1001 &7939618861974056883
 PrefabInstance:
   m_ObjectHideFlags: 0
