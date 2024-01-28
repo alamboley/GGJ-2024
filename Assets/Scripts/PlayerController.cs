@@ -61,13 +61,15 @@ public class PlayerController : MonoBehaviour
 
         if (other.name == "WinZone")
         {
-            Debug.Log("WIIIIN");
+            canvasManager.win.SetActive(true);
             return;
         }
         else if (other.name == "Car")
             grandmaController.GoToCar();
+
         else if (other.GetComponent<GrandmaController>())
-            Debug.Log("Game over");
+            canvasManager.loose.SetActive(true);
+
         else if (other.GetComponent<BoneComponent>())
         {
             other.GetComponent<BoneComponent>().OnCollect();

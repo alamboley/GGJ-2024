@@ -4,27 +4,38 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CanvasManager : MonoBehaviour
+public class CanvasManager : PersistentSingleton<CanvasManager>
 {
     public PlayerController playerController;
     public GrandmaController grandmaController;
 
     public TextMeshProUGUI bones;
     public int numBonesRequiredForBigEyes = 1;
-    public TextMeshProUGUI dogStatut;
+    public Image dogStatut;
+    public Sprite dogOK;
+    public Sprite dogNotOK;
     public int numBonesRequiredForNiceDog = 2;
     public BoxCollider dogBoxCollider;
     public TextMeshProUGUI pola;
-    public Button bigEyes;
     public Button ForceFollowPlayer;
 
     public HorizontalLayoutGroup polasLayoutGroup;
+
+    public Image grandmaImg;
+    public Sprite grandmaOK;
+    public Sprite grandmaNotOK;
+    public Sprite grandmaShocked;
+
+    public Button catBtn;
+
+    public GameObject win;
+    public GameObject loose;
 
     int _bones = 0;
     int _pola = 0;
     void Start()
     {
-        bigEyes.onClick.AddListener(_ActivateBigEyes);
+        catBtn.onClick.AddListener(_ActivateBigEyes);
         ForceFollowPlayer.onClick.AddListener(grandmaController.SetFollowPlayer);
     }
 
@@ -40,19 +51,19 @@ public class CanvasManager : MonoBehaviour
 
     void _CanUseBigEyes()
     {
-        bigEyes.interactable = _bones >= numBonesRequiredForBigEyes;
+        catBtn.interactable = _bones >= numBonesRequiredForBigEyes;
     }
 
     void _CheckDogIsNice()
     {
         if (_bones >= numBonesRequiredForNiceDog)
         {
-            dogStatut.text = "Dog is happy";
+            dogStatut.sprite = dogOK;
             dogBoxCollider.enabled = false;
         }
         else
         {
-            dogStatut.text = "Dog is not happy";
+            dogStatut.sprite = dogNotOK;
             dogBoxCollider.enabled = true;
         }
     }
@@ -79,5 +90,18 @@ public class CanvasManager : MonoBehaviour
         ++_pola;
 
         pola.text = "x " + _pola;
+    }
+
+    // state 0 - ok
+    // state 1 - notok
+    // state 2 - shocked
+    public void UpdateStatutsGrandma(int state)
+    {
+        if (state == 0)
+            grandmaImg.sprite = grandmaOK;
+        else if (state == 1)
+            grandmaImg.sprite = grandmaNotOK;
+        else if (state == 2)
+            grandmaImg.sprite = grandmaShocked;
     }
 }

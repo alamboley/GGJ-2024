@@ -56,6 +56,8 @@ public class GrandmaController : MonoBehaviour
 
     private void _GetRandomGoal()
     {
+
+        CanvasManager.Instance.UpdateStatutsGrandma(0);
         System.Random random = new System.Random();
         int randomNumber = random.Next(goals.Length);
 
@@ -67,6 +69,7 @@ public class GrandmaController : MonoBehaviour
         _agent.isStopped = true;
         _mustGoHome = true;
         _isFollowingPlayer = false;
+        CanvasManager.Instance.UpdateStatutsGrandma(2);
         GoHome();
 
         DOVirtual.DelayedCall(delay, () => _agent.isStopped = false);
@@ -89,6 +92,7 @@ public class GrandmaController : MonoBehaviour
         if (!_isFollowingPlayer)
         {
             _isFollowingPlayer = true;
+            CanvasManager.Instance.UpdateStatutsGrandma(1);
             StartCoroutine(_FollowPlayer());
         }
     }
@@ -120,6 +124,7 @@ public class GrandmaController : MonoBehaviour
     private void _UnfollowPlayer()
     {
         Debug.Log("Unfollow player");
+        CanvasManager.Instance.UpdateStatutsGrandma(0);
         _isFollowingPlayer = false;
         _GetRandomGoal();
     }
