@@ -79,7 +79,8 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -9127248039257115243, guid: 125d6458ec8654549b22c1006a1513ce, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 125d6458ec8654549b22c1006a1513ce,
@@ -163,5 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17462880291b35d4c882320a59d2a516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasManager: {fileID: 0}
+  grandmaController: {fileID: 0}
   speed: 6
   rotationSpeed: 150
+  bigEyesTimeLength: 3
