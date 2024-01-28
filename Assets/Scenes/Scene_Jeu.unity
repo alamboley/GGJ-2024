@@ -11533,17 +11533,17 @@ PrefabInstance:
     - target: {fileID: 5626261035901318557, guid: 87b817d260f7f2b499bb6ba68ef141e0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.95
+      value: 7.7
       objectReference: {fileID: 0}
     - target: {fileID: 5626261035901318557, guid: 87b817d260f7f2b499bb6ba68ef141e0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0010018945
+      value: 0.336
       objectReference: {fileID: 0}
     - target: {fileID: 5626261035901318557, guid: 87b817d260f7f2b499bb6ba68ef141e0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.31
+      value: 4.02
       objectReference: {fileID: 0}
     - target: {fileID: 5626261035901318557, guid: 87b817d260f7f2b499bb6ba68ef141e0,
         type: 3}
@@ -11584,6 +11584,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PF_PotFleur
+      objectReference: {fileID: 0}
+    - target: {fileID: 8613531216436740391, guid: 87b817d260f7f2b499bb6ba68ef141e0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.256
+      objectReference: {fileID: 0}
+    - target: {fileID: 8989951962552408989, guid: 87b817d260f7f2b499bb6ba68ef141e0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18717,7 +18727,7 @@ PrefabInstance:
     - target: {fileID: 9179579165752282473, guid: faae43418fefbc34a9030a1959cbe95f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9179579165752282473, guid: faae43418fefbc34a9030a1959cbe95f,
         type: 3}
@@ -18727,12 +18737,12 @@ PrefabInstance:
     - target: {fileID: 9179579165752282473, guid: faae43418fefbc34a9030a1959cbe95f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9179579165752282473, guid: faae43418fefbc34a9030a1959cbe95f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9179579165752282473, guid: faae43418fefbc34a9030a1959cbe95f,
         type: 3}
@@ -18742,7 +18752,7 @@ PrefabInstance:
     - target: {fileID: 9179579165752282473, guid: faae43418fefbc34a9030a1959cbe95f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 270
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9179579165752282473, guid: faae43418fefbc34a9030a1959cbe95f,
         type: 3}
