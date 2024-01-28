@@ -58,11 +58,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4954415548234615812, guid: cf37aea6e1cdc2c488d4054c1917a739,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 17a2558be99ab4741a1cd96fa9fec6f6, type: 2}
     - target: {fileID: 919132149155446097, guid: cf37aea6e1cdc2c488d4054c1917a739,
         type: 3}
       propertyPath: m_Name
       value: Dog
       objectReference: {fileID: 0}
+    - target: {fileID: 5485055404615124265, guid: cf37aea6e1cdc2c488d4054c1917a739,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 17a2558be99ab4741a1cd96fa9fec6f6, type: 2}
+    - target: {fileID: 6963969315475120533, guid: cf37aea6e1cdc2c488d4054c1917a739,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 17a2558be99ab4741a1cd96fa9fec6f6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
